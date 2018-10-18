@@ -5,6 +5,7 @@
     <mat-card-content>
       <p>ที่อยู่ : {{restaurantInfo.address}}</p>
       <p>ประเภทร้าน: {{restaurantInfo.categories.categoryName}}</p>
+      <p>คะแนน:  <mat-star-rating [rating]="restaurantRating"  [starCount]="5" [color]="accent"></mat-star-rating> {{restaurantRating}}</p>
       </mat-card-content>
 
   </div>
@@ -26,6 +27,7 @@
           <img class="commentImg" src="{{comment.img}}">
           <br/>
           <mat-star-rating [rating]="comment.rating"  [starCount]="5" [color]="accent"></mat-star-rating>
+          {{comment.rating}}
           <button mat-fab color="warn" (click)="delete(comment.cmid)" class="deletebutton">Delete</button>
         </div>
       </div>

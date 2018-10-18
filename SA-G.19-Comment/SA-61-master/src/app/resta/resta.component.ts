@@ -9,8 +9,9 @@ import {Observable} from 'rxjs';
 })
 export class RestaComponent implements OnInit {
 
-restas:Array<any>;
+  restas:Array<any>;
   members: Array<any>;
+  
 
   constructor(private restaService: RestaService) { }
 

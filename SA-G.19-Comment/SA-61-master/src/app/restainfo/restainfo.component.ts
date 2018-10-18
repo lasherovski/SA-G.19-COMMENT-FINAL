@@ -17,12 +17,14 @@ export class RestainfoComponent implements OnInit {
 
 
 
-
+  restaurantRating: Object;
   restaurantInfo: Object;
   comments: Array<any>;
   members: Array<any>;
+  restaurantnumber: any;
 
-restaurantnumber: any;
+  
+ 
 
   constructor(private data: RestaService,private route: ActivatedRoute,private httpClient: HttpClient) {
     this.route.params.subscribe( params => this.restaurantInfo = params.rid),
@@ -38,7 +40,12 @@ restaurantnumber: any;
 
     this.data.getMembers().subscribe(data => {
     this.members = data;
-    })}
+    })
+    
+    this.data.getRatingByRid(this.restaurantnumber).subscribe(
+      data => { this.restaurantRating = data})
+    }
+
 
 
 

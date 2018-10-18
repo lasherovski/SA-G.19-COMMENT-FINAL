@@ -82,6 +82,12 @@ public class CommentController {
         commentRepository.deleteById(cmid);
     }
 
+    @GetMapping("restaurant/rating/{rid}")
+    public List<Comment> RestaurantRating(@PathVariable Long rid){
+        return commentRepository.findAllRating(rid);
+
+    }
+
 }
 
 

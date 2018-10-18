@@ -25,4 +25,7 @@ constructor(private http: HttpClient) {
     return this.http.get('//localhost:8080/members');
   }
 
+  getRatingByRid(rid){
+    return this.http.get('//localhost:8080/restaurant/rating/'+rid);
+  }
 }
